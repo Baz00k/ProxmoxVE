@@ -1,0 +1,72 @@
+{
+  "name": "Steam Headless",
+  "slug": "steam-headless",
+  "categories": [
+    13
+  ],
+  "date_created": "2024-08-28",
+  "type": "ct",
+  "updateable": true,
+  "privileged": true,
+  "interface_port": 8083,
+  "documentation": "https://github.com/Steam-Headless/docker-steam-headless",
+  "website": "https://github.com/Steam-Headless/docker-steam-headless",
+  "logo": "https://cdn.jsdelivr.net/gh/selfhst/icons/webp/steam.webp",
+  "config_path": "/opt/steam-headless/",
+  "description": "Steam Headless is a Docker-based solution that provides remote access to Steam gaming environment via web browser with hardware acceleration support for gaming performance.",
+  "install_methods": [
+    {
+      "type": "default",
+      "script": "ct/steam-headless.sh",
+      "resources": {
+        "cpu": 4,
+        "ram": 4096,
+        "hdd": 20,
+        "os": "ubuntu",
+        "version": "24.04"
+      }
+    }
+  ],
+  "default_credentials": {
+    "username": "steam",
+    "password": "password"
+  },
+  "notes": [
+    {
+      "text": "Requires privileged container for optimal hardware acceleration and device access",
+      "type": "warning"
+    },
+    {
+      "text": "Web interface accessible at http://[container-ip]:8083",
+      "type": "info"
+    },
+    {
+      "text": "VNC access available on port 5900 for direct desktop access",
+      "type": "info"
+    },
+    {
+      "text": "SSH/SFTP access on port 22 for file management (user: steam, password: password)",
+      "type": "info"
+    },
+    {
+      "text": "SECURITY: Change default password immediately after installation!",
+      "type": "warning"
+    },
+    {
+      "text": "System automatically optimized for gaming performance with kernel tuning and resource limits",
+      "type": "info"
+    },
+    {
+      "text": "Game library stored in /opt/steam-headless/games, user data in /opt/steam-headless/home",
+      "type": "info"
+    },
+    {
+      "text": "Management scripts available: steam-headless-start, steam-headless-stop, steam-headless-restart, steam-headless-logs, steam-headless-update",
+      "type": "info"
+    },
+    {
+      "text": "Hardware acceleration configured automatically for supported graphics cards",
+      "type": "info"
+    }
+  ]
+}
